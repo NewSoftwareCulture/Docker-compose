@@ -64,3 +64,17 @@ echo "Pipeline 2" | docker exec -i kafka bash ./usr/bin/kafka-console-producer -
 Docs:
 
 https://medium.com/@TimvanBaarsen/apache-kafka-cli-commands-cheat-sheet-a6f06eac01b
+
+
+## Работа без поднятия docker-compose
+
+#### Выдача прав на запуск скрипта
+
+```bash
+chmod 777 ./produce.sh
+```
+
+#### Запуск скрипта на отправку сообщений в кафку
+```bash
+./produce.sh
+```
