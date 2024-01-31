@@ -1,0 +1,19 @@
+version: "3"
+services:
+ telegram-local-server:
+    image: "tdlib"
+    restart: "always"
+    ports:
+      - "8080:8080"
+    environment:
+      - TELEGRAM_SERVER_API_ID=
+      - TELEGRAM_SERVER_API_HASH=
+    volumes:
+      - type: bind
+        source: /tmp/telegram/storage
+        target: /tmp/telegram/storage
+    networks:
+      - telegram_network
+
+networks:
+  telegram_network:
