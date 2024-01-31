@@ -2,6 +2,7 @@ version: "3"
 services:
  rabbitmq:
     image: "rabbitmq:3-management"
+    restart: "always"
     ports:
       - "5672:5672"
       - "15672:15672"
@@ -9,7 +10,12 @@ services:
       - RABBITMQ_DEFAULT_USER=admin
       - RABBITMQ_DEFAULT_PASS=admin
     volumes:
-      - 'rabbitmq_data:/data'
+      - "rabbitmq_data:/data"
+    networks:
+      - amqp_network
 
 volumes:
   rabbitmq_data:
+
+networks:
+  amqp_network:
