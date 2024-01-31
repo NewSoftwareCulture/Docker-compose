@@ -1,0 +1,12 @@
+version: "3"
+services:
+  simple-service:
+    image: "python_server"
+    restart: "always"
+    ports:
+      - "8081-8084:8080"
+    networks:
+      - service-network
+
+networks:
+  service-network:
